@@ -45,7 +45,20 @@ class Start:
         self.level_frame.grid(row=2)
 
         # Buttons goes here
-        button_font =  "Arial 12 bold"
+        # Blue Addition Button
+        button_font = "Arial 12 bold"
+        self.addition_button = Button(self.addition_frame, text="Addition",
+                                      command=lambda: self.to_game(1),
+                                      font=button_font, bg="Blue")
+        self.addition_button.grid(row=0, column=0, pady=10)
+
+        # Purple Multiplication Button
+        self.Multiplcation_button= Button(self.Multiplcation_frame,
+                                          text="Multiplication",
+                                          command=lambda: self.to_game(2),
+                                          font=button_font, bg="purple")
+        self.multiplication_button.grid(row=0, column=1, padx=5, pady=10)
+
 
 
 
