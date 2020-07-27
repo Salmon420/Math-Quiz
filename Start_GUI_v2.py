@@ -10,10 +10,6 @@ class Start:
         self.start_frame = Frame(padx=10, pady=10)
         self.start_frame.grid()
 
-        self.entry_error_frame = Frame(padx=10, pady=10)
-        self.entry_error_frame.grid()
-
-
         self.starting_equation = IntVar()
         self.starting_equation.set(0)
 
@@ -33,20 +29,20 @@ class Start:
         self.math_instructions.grid(row=1)
 
         # Entry box...(row=2)
-        self.start_quiz_entry = Entry(self.start_frame, width=200)
-        self.start_quiz_entry.grid(row=2)
+        self.get_question_frame = Frame(self.start_frame, width=200)
+        self.get_question_frame.grid(row=2)
 
-        self.start_quiz_entry = Entry(self.entry_error_frame,
+        self.start_quiz_entry = Entry(self.get_question_frame,
                                       font="Arial 19 bold", width=10)
         self.start_quiz_entry.grid(row=0, column=0)
 
-        self.add_equation_button = Button(self.entry_error_frame,
+        self.add_equation_button = Button(self.get_question_frame,
                                           font="Arial 19 bold",
                                           text="Number Of Equations",
                                           command=self.check_equation)
         self.add_equation_button.grid(row=0, column=1)
 
-        self.equation_error_label = Label(self.entry_error_frame, fg="maroon",
+        self.equation_error_label = Label(self.get_question_frame, fg="maroon",
                                           text="", font="Arial 10 bold", wrap=275,
                                           justify=LEFT)
         self.equation_error_label.grid(row=1, columnspan=2, pady=5)
