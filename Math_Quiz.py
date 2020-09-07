@@ -8,6 +8,9 @@ class Quiz:
     def __init__(self):
 
         # Formatting variables...
+
+        # background colour
+
         background_color = "cyan"
 
         self.starting_question = IntVar()
@@ -194,9 +197,11 @@ class Quiz:
         starting_question = self.amount_entry.get()
         low_amount = self.low_num_entry.get()
         high_amount = self.high_num_entry.get()
-        print(starting_question, low_amount, high_amount)
+        print(__doc__)
 
         Game(self, op, starting_question, low_amount, high_amount)
+
+
 
 
 class Game:
@@ -356,7 +361,6 @@ class Game:
             var_correct = hi_lo_num + hi_lo_num2
             self.correct.set(var_correct)
             questions_played += 1
-            print(questions_played)
         elif op == 2:
             hi_lo_num = random.randrange(low_amount, high_amount)
             hi_lo_num2 = random.randrange(low_amount, high_amount)
@@ -397,6 +401,8 @@ class Game:
 
     def export(self, low_amount, high_amount, questions_played, how_many_right, history_questions):
         Export(self, low_amount, high_amount, questions_played, how_many_right, history_questions)
+
+
 
 
 class Help:
@@ -450,11 +456,10 @@ class Help:
         self.help_box.destroy()
 
 
+
+
 class Export:
     def __init__(self, partner, low_amount, high_amount, questions_played, how_many_right, history_questions):
-
-        print(low_amount, high_amount, questions_played, how_many_right)
-        print(history_questions)
 
         background_color = "cyan"
 
@@ -547,7 +552,6 @@ class Export:
         has_error = "no"
 
         filename = self.filename_entry.get()
-        print(filename)
 
         for letter in filename:
             if re.match(valid_char, letter):
@@ -570,7 +574,6 @@ class Export:
             self.save_error_label.config(text="Invalid filename - {}".format(problem))
             # Change entry box background to pink
             self.filename_entry.config(bg="#ffafaf")
-            print()
 
         else:
             # If there are no errors, generate text file and then close dialogue
@@ -597,6 +600,8 @@ class Export:
         # Put export button back to normal...
         partner.export_btn.config(state=NORMAL)
         self.export_box.destroy()
+
+
 
 
 # main routine

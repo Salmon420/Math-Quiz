@@ -1,0 +1,5 @@
+your low number was: 5
+your high number was: 6
+you have played 5 around
+you got 5 correct out of 5  
+['5 x 5', 25, '5 x 5', 25, '5 x 5', 25, '5 x 5', 25, '5 x 5', 25] 
